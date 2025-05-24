@@ -1,0 +1,137 @@
+@use './scss/base';
+@use './scss/variables' as *;
+@use './scss/mixins' as *;
+
+body {
+    @include flex-layout(center, center);
+    flex-direction: column;
+    gap: 2rem;
+    background-color: $grey-950;
+    min-height: 100vh;
+}
+
+
+#rating-state {
+    background-color: $grey-900;
+    padding: 1.5em;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 100%;
+
+    figure {
+        background-color: $grey-600;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        @include flex-layout(center, center);
+        margin-bottom: 2rem;
+    }
+
+    p {
+        margin: 12px 0;
+    }
+
+    form div {
+        @include flex-layout(center, center);
+        gap: 1em;
+        margin-bottom: 2em;
+    }
+
+    form div input {
+        width: 50px;
+        height: 50px;
+        // padding: 1em;
+        border: none;
+        background: transparent;
+        background-color: $grey-600;
+        border-radius: 50%;
+        font-size: 15px; 
+        font-weight: 400;
+        color: $grey-500;
+        cursor: pointer;
+    }
+
+    form div input.actived {
+        background-color: $white;
+        color: $grey-950;
+    }
+
+
+    form div input:hover {
+        background-color: $range-500;
+        color: $grey-950;
+    }
+
+    form .submitButton {
+        width: 100%;
+        padding: 1em;
+        border: none;
+        background: $range-500;
+        border-radius: 40px;
+        font-size: 15px;
+        font-weight: 700;
+        color: $grey-950;
+        letter-spacing: 2px;
+        cursor: pointer;
+    }
+
+    form .submitButton:hover {
+        background-color: $white;
+    }
+
+    &.remove {
+        display: none;
+    }
+
+    @media screen and (max-width: 425px) {
+        width: 90%;
+        form div {
+            gap: 8px;
+        }
+        padding: 1.5em;
+    }
+}
+
+
+#thank-you-state {
+    background-color: $grey-900;
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    display: none;
+
+    .message {
+        margin: 2em auto;
+        padding: 6px 0;
+        background-color: $grey-600;
+        border-radius: 40px;
+        color: $range-500;
+        width: 200px;
+    }
+
+    h2 {
+        margin-bottom: 8px;
+    }
+
+    &.display {
+        display: block;
+    }
+
+    @media screen and (max-width: 425px) {
+        width: 90%;
+        padding: 1.5em;
+    }
+
+}
+
+
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+    color: $grey-500;
+    a { 
+        color: $range-500; 
+    }
+}
